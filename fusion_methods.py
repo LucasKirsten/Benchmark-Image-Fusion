@@ -83,7 +83,7 @@ def Mertens(images, ws, we, wc):
     if ws==1:
         W *= np.std(images, axis=-1)+1
     if we==1:
-        W *= np.prod(np.exp(-((images - 0.5)**2)/(2*0.2)), axis=-1, dtype=np.float32)+1
+        W *= np.prod(np.exp(-((images - 0.5)**2)/(2*0.04)), axis=-1, dtype=np.float32)+1
     if wc==1:
         W *= np.array([np.abs(cv2.Laplacian(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), cv2.CV_32F)) for img in images])+1
     
